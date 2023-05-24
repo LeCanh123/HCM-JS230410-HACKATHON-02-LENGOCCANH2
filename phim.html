@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .item-1{
+        display:flex;
+        background-color: aqua;
+        justify-content: center;
+        margin-bottom: 50px;;
+    }
+    .col-1{
+        text-align: center;
+       display:inline-block;
+       width:20%;
+       background-color: antiquewhite; 
+    }
+    .col-1:hover{
+        background-color: aquamarine;
+        cursor: pointer;
+    }
+        .item-2{
+        width:100%;
+        display:flex;
+        background-color: aqua;
+        justify-content:space-around;
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    .col-2{
+        text-align: center;
+       display:inline-block;
+       width:200px;
+       height:200px;
+       background-color: rgb(22, 201, 55); 
+       flex-wrap: wrap;
+       margin-bottom: 10px;
+    }
+    .col-2 .img{
+        width:20%;
+        height:10%;
+    }
+    .col-3{
+        /* display:none; */
+        position:fixed;
+        top:50%;
+        left:50%;
+    }
+            .item-4{
+       width:100%;
+       text-align: center;
+       position:fixed;
+       top:100px;
+       left:0px;
+       /* display:none */
+       
+    }
+     .col-4{
+        text-align: center;
+        width:30%;
+        margin:0 auto;
+    }
+      .col-5{
+        text-align: center;
+        width:30%;
+        margin:0 auto;
+        background-color: aqua;
+        z-index: 99;
+    }
+</style>
+<body>
+    <div class="item-1">
+<div class="col-1" onclick="tatCa()">Tất Cả</div>
+<div class="col-1" onclick="hanhDong()">Hành Động</div>
+<div class="col-1" onclick="kinhDi()">Kinh Dị</div>
+<div class="col-1" onclick="tinhCam()">Tình Cảm</div>
+    </div>
+    <div class="item-1">
+<div class="col-1"><input type="text" oninput="timKiem()" placeholder="Tìm Kiếm" id="timKiem1"></div>
+<div class="col-1" ><button onclick="timKiem()">Tìm Kiếm</button></div>
+<div class="col-1"><button onclick="sapXep()">Sắp Xếp</button></div>
+<div class="col-1" > &nbsp</div>
+    </div>
+
+<div class="item-2" id="item-3">
+    <div class="col-2"><img width="100%" height="70%" src="./hinhAnh/hd Bullet Train - Sát thủ đối đầu.jpg"></div>
+    <div class="col-2"><img width="100%" height="70%" src="./hinhAnh/hd Bullet Train - Sát thủ đối đầu.jpg"></div>
+    <div class="col-2"><img width="100%" height="70%" src="./hinhAnh/hd Bullet Train - Sát thủ đối đầu.jpg"></div>
+    <div class="col-2"><img width="100%" height="70%" src="./hinhAnh/hd Bullet Train - Sát thủ đối đầu.jpg"></div>
+    <div class="col-2"><img width="100%" height="70%" src="./hinhAnh/hd Bullet Train - Sát thủ đối đầu.jpg"></div>
+
+<img src="./hinhAnh/tc Phim tình cảm chúng ta của sau này.jpg">
+    
+</div>
+
+<div id="thongTin1" class="item-4">
+    <div class="col-4"><img width="100%" height="70%" src="./hinhAnh/hd Bullet Train - Sát thủ đối đầu.jpg"></div>
+    <div class="col-5">Sát Thủ Đối Đầu kể về Ladybug (Brad Pitt) - một sát thủ lành nghề vừa trở lại sau khoảng thời gian nghỉ hưu. Anh nhận nhiệm vụ từ một phụ nữ bí ẩn là thu hồi chiếc vali trên chuyến tàu cao tốc ở Nhật Bản. Những tưởng đây sẽ là phi vụ dễ ăn thì một loạt biến cố ập đến. Ladybug phải đối mặt với vô số thế lực khác nhau trên chiếc tàu hỏa cùng nhắm vào chiếc vali kia. Đối thủ của anh lần lượt là Lemon (Brian Tyree Henry), Kimura (Andrew Koji), Hornet (Zazie Beetz), Prince (Joey King) và Tangerine (Aaron Taylor-Johnson). Mỗi người đều có những âm mưu và cách thức hoạt động riêng dẫn đến một cục diện vô cùng rối ren.</div>
+    <div class="col-5" style="color:red">Thể Loại</div>
+    <div class="col-5" style="color:red">Ngày Chiếu</div>
+
+</div>
+
+
+
+    <script>
+        let danhSachPhim=[{link:"./hinhAnh/hd Bullet Train - Sát thủ đối đầu.jpg",
+        noiDung:"Sát Thủ Đối Đầu kể về Ladybug (Brad Pitt) - một sát thủ lành nghề vừa trở lại sau khoảng thời gian nghỉ hưu. Anh nhận nhiệm vụ từ một phụ nữ bí ẩn là thu hồi chiếc vali trên chuyến tàu cao tốc ở Nhật Bản. Những tưởng đây sẽ là phi vụ dễ ăn thì một loạt biến cố ập đến. Ladybug phải đối mặt với vô số thế lực khác nhau trên chiếc tàu hỏa cùng nhắm vào chiếc vali kia. Đối thủ của anh lần lượt là Lemon (Brian Tyree Henry), Kimura (Andrew Koji), Hornet (Zazie Beetz), Prince (Joey King) và Tangerine (Aaron Taylor-Johnson). Mỗi người đều có những âm mưu và cách thức hoạt động riêng dẫn đến một cục diện vô cùng rối ren.",
+        theLoai:"Phim Hành Động",
+        ngayChieu:"25-5-2023",
+         ten:"Bullet Train",
+         id:"01"
+},
+       
+//            {link:" ",
+//         noiDung:" ",
+//         theLoai:" ",
+//         ngayChieu:" "
+//         }
+// ,
+            {link:"./hinhAnh/hd john wick.jpg",
+        noiDung:" “John Wick: Chapter 4” là phần thứ 4 John Wick (Keanu Reeves) khám phá ra con đường đánh bại High Table. Nhưng trước khi có thể kiếm được tự do, Bấc phải đối đầu với một kẻ thù mới với các liên minh hùng mạnh trên toàn cầu và các thế lực biến bạn cũ thành thù.",
+        theLoai:"Phim Hành Động",
+        ngayChieu:"26-5-2023",
+        ten:"John wick",
+        id:"02"
+        }
+        ,
+           {link:"./hinhAnh/hd Mission Impossible 7.jpg",
+        noiDung:"Nhiệm vụ bất khả thi: Nghiệp báo  Phần 7 là một bộ phim về điệp viên hành động sắp tới của Mỹ do Christopher McQuarrie viết kịch bản và đạo diễn. Đây sẽ là phần thứ bảy và là phần áp chót của loạt phim Nhiệm vụ bất khả thi, và phần ba trong loạt phim do McQuarrie đạo diễn, sau Quốc gia bí ẩn và Sụp đổ",
+        theLoai:"Phim Hành Động",
+        ngayChieu:"27-5-2023",
+        ten:"Mission Impossible 7",
+        id:"03"
+        }
+,
+    {link:"./hinhAnh/hd The Lost City.jpg",
+        noiDung:"The Lost City, phát hành hôm 25/3, quy tụ dàn sao đình đám Sandra Bullock, Channing Tatum, Daniel Radcliffe và Brad Pitt. Dự án do anh em nhà Aaron và Adam Nee đạo diễn kiêm viết kịch bản, dựa trên một câu chuyện hài của Seth Gordon.",
+        theLoai:"Phim Hành Động",
+        ngayChieu:"28-5-2023",
+         ten:"The Lost City",
+         id:"04"
+        },
+
+            {link:"./hinhAnh/kd Series Annabelle.jpg",
+        noiDung:"Annabelle là một bộ phim theo thể loại kinh dị siêu nhiên được Hoa Kỳ sản xuất vào năm 2014. Phim do John R. Leonetti đạo diễn, cùng phần sản xuất và viết kịch bản lần lượt được thực hiện bởi James Wan, và Gary Dauberman. Đây vừa là phần tiếp theo, vừa là bộ phim nhỏ trích từ The Conjuring (2013).[7] Bộ phim có sự góp mặt của Annabelle Wallis, Ward Horton, và Alfre Woodard.",
+        theLoai:"Phim Kinh Dị",
+        ngayChieu:"29-5-2023",
+        ten:"Series Annabelle",
+        id:"05"
+        },
+
+   {link:"./hinhAnh/kd Series The Conjuring.jpg",
+        noiDung:"Phim xoay quanh chuyện trừ tà của hai vợ chồng là Ed và Lorraine Warren khi cố tiếp cận và giúp đỡ các gia đình đang bị các thế lực hắc ám quấy phá, tuy nhiên cũng vì thế mà họ liên tục phải đối mặt với nhiều nguy hiểm",
+        theLoai:"Phim Kinh Dị",
+        ngayChieu:"1-6-2023",
+        ten:"Series The Conjuring",
+        id:"06"
+        },
+
+           {link:"./hinhAnh/kd The Nun.jpg",
+        noiDung:"Lật mở một sự thật khủng khiếp đằng sau một linh hồn hiểm ác đang ám một địa điểm linh thiêng trong cuộc điều tra về cái chết kỳ bí của một vị nữ tu trẻ tuổi. Tất cả sẽ được diễn ra trong bộ phim The Nun: Ác quỷ ma sơ (2018). Cùng tìm hiểu rõ hơn bộ phim này nhé",
+        theLoai:"Phim Kinh Dị",
+        ngayChieu:"2-6-2023",
+        ten:"The Nun",
+        id:"07"
+        },
+
+             {link:"./hinhAnh/tc Bộ phim điều tuyệt vời nhất của chúng ta.jpg",
+        noiDung:"Điều Tuyệt Vời Nhất Của Chúng Ta kể về Cảnh Cảnh (Đàm Tùng Vận), một nữ sinh từ trường cấp hai bình thường may mắn thi đỗ trường cấp ba trọng điểm Chấn Hoa. Tại đây cô tình cờ gặp gỡ và sau đó trở thành bạn cùng bàn với Dư Hoài (do Lưu Hạo Nhiên).",
+        theLoai:"Phim Tình Cảm",
+        ngayChieu:"3-6-2023",
+        ten:"Điều tuyệt vời nhất của chúng ta",
+        id:"08"
+        },
+
+             {link:"./hinhAnh/tc Chuyện tình cây táo gai - phim tình cảm lãng mạn.jpg",
+        noiDung:"Chuyện tình cây táo gai (còn gọi là Chuyện tình cây sơn tra) được chuyển thể từ một tiểu thuyết nổi tiếng năm 2007. Phim lấy bối cảnh thời Cách mạng văn hóa ở Trung Quốc vào thập niên 1960, 1970. Cô bé 16 tuổi Tịnh Thu (Châu Đông Vũ) đang học trung học, có bố phải đi học tập cải tạo. Từ chỗ là giáo viên, mẹ cô phải xuống làm lao công. Tịnh Thu về nông thôn sống cùng người dân theo định hướng lao động và rèn luyện thời đó.",
+        theLoai:"Phim Tình Cảm",
+        ngayChieu:"4-6-2023",
+        ten:"Chuyện tình cây táo gai",
+        id:"09"
+        },
+
+             {link:"./hinhAnh/tc Phim tình cảm chúng ta của sau này.jpg",
+        noiDung:"Chúng ta của sau này hay Us and them là bộ phim điện ảnh thuộc thể loại tình cảm, chính kịch do ca sĩ, diễn viên kiêm đạo diễn Lưu Nhược Anh chỉ đạo thực hiện, phim được công chiếu vào năm 2018.Tác phẩm xoay quanh câu chuyện tình yêu dang dở nhưng đẹp đẽ của hai nhân vật chính và những vấn đề về xã hội cùng sự khác biệt quan điểm mà cả hai phải đối mặt.",
+        theLoai:"Phim Tình Cảm",
+        theLoai1:"ptc",
+        ngayChieu:"5-6-2023",
+        ten:"Tình cảm chúng ta của sau này",
+        id:"10"
+        }
+
+        ];
+
+
+
+            function hienThi(dsHienThi){
+            if(dsHienThi==""){
+            let a=document.getElementById("item-3");
+            let b="";
+            danhSachPhim.forEach((c,d)=>{
+            b+=`
+            <div class="col-2" onclick="thongTin(${c.id})"><img onclick="thongTin(${c.id})" width="100%" height="70%" src="${c.link}"><div>${c.ten}</div></div>
+            `
+            })
+            a.innerHTML=b;
+            }else{
+            let a=document.getElementById("item-3");
+            let b="";
+            dsHienThi.forEach((c,d)=>{
+            b+=`
+            <div class="col-2" onclick="thongTin(${c.id})"><img onclick="thongTin(${c.id})" width="100%" height="70%" src="${c.link}"><div>${c.ten}</div></div>
+            `
+            })
+            a.innerHTML=b;
+            }
+            }
+            hienThi("");
+
+            function thongTin(n){       
+            danhSachPhim.forEach((b,h)=>{
+                if(b.id==n){
+                    let a=document.getElementById("thongTin1");
+                    a.innerHTML=`
+            <div class="col-5" onmouseover="dong()"><br><br>Đóng<br><br></div>           
+            <div class="col-4"><img width="100%" height="70%" src="${danhSachPhim[h].link}"></div>
+            <div class="col-5">${danhSachPhim[h].noiDung}</div>
+            <div class="col-5" style="color:red">Thể Loại:${danhSachPhim[h].theLoai}</div>
+            <div class="col-5" style="color:red">Ngày Chiếu: ${danhSachPhim[h].ngayChieu}</div>
+            `
+
+                }
+            })
+           
+            }
+
+
+            function dong(){
+            let a=document.getElementById("thongTin1");
+            a.innerHTML=""
+            }
+            dong();
+
+
+            function tatCa(){
+            hienThi("");
+
+            }
+
+
+
+            function hanhDong(){
+            let danhSach=[];
+            let b= danhSachPhim.filter((a)=>{
+            return a.theLoai=="Phim Hành Động"})
+            hienThi(b);
+            }
+
+
+
+            function tinhCam(){
+            let danhSach=[];
+            let b= danhSachPhim.filter((a)=>{
+            return a.theLoai=="Phim Tình Cảm"})
+            hienThi(b);
+            }
+            function kinhDi(){
+            let danhSach=[];
+            let b= danhSachPhim.filter((a)=>{
+            return a.theLoai=="Phim Kinh Dị"})
+            hienThi(b);
+            }
+
+
+            function timKiem(){
+            let b=[];
+            let a=document.getElementById("timKiem1").value;
+            danhSachPhim.forEach((c,d)=>{
+            if(c.ten.indexOf(a)!=-1){
+            b.push(c);
+            hienThi(b);
+            }else{
+                hienThi("");  
+            }
+
+            })
+            }
+
+        function sapXep() {
+        danhSachPhim1 = danhSachPhim.sort((a, b) => {
+        if (a.ten > b.ten) {
+        return 1;
+        } else if (a.ten < b.ten) {
+        return -1;
+        } else {
+        return 0;
+        }
+        });
+        hienThi(danhSachPhim1);
+        }
+    </script>
+</body>
+</html>
